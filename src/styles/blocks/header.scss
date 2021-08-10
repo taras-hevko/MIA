@@ -1,0 +1,220 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  background-image: url(../images/header.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  padding: 25px $small-screen-x-padding 80px;
+
+  &__nav-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 1020px;
+    width: 100%;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__burger {
+    z-index: 2;
+
+    width: $big-icon-size;
+    height: $big-icon-size;
+    background-image: url(../images/menu.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    transition: opacity 0.5s linear,
+      transform 0.3s linear;
+    &:hover {
+      background-image: url(../images/menu_hover.svg);
+    }
+    &--active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &__burger--active,
+  &__burger--active:hover {
+    background-image: url(../images/Vector.svg);
+    transform: rotate(90deg);
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    line-height: 22px;
+
+    position: absolute;
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100%;
+    padding: 0 $small-screen-x-padding;
+
+    visibility: hidden;
+    opacity: 0;
+
+    background-color: $color-blue;
+    transition: opacity 0.5s linear;
+
+    &--active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1020px;
+  }
+  &__nav-link {
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 22px;
+
+    width: max-content;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 8px;
+
+    color: $color-white;
+
+    margin-bottom: 32px;
+    &:hover {
+      border-bottom: 1px solid $color-white;
+    }
+  }
+  &__nav-phone {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+
+    width: max-content;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 8px;
+
+    color: $color-white;
+
+    margin-bottom: 16px;
+    &--active {
+      border-bottom: 1px solid $color-white;
+    }
+  }
+  &__nav-phone:nth-child(6n) {
+    margin-top: 16px;
+  }
+
+  &__logo-link {
+    z-index: 3;
+  }
+  &__phone-link {
+    position: relative;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    text-decoration: none;
+    color: $color-white;
+    &::before {
+      content: "+1 234 555-55-55";
+      display: block;
+      width: max-content;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      margin-right: 48px;
+      opacity: 0;
+
+      pointer-events: none;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+  &__phone {
+    width: $big-icon-size;
+    height: $big-icon-size;
+  }
+  &__title {
+    position: relative;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 80px;
+    padding: 24px 0;
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -1.5px;
+
+    color: $color-white;
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: $color-white;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .header {
+    &__burger,
+    &__phone {
+      width: $small-icon-size;
+      height: $small-icon-size;
+    }
+    &__phone-link::before {
+      display: none;
+    }
+    &__logo {
+      width: 82px;
+      height: 48px;
+    }
+    &__title {
+      font-size: 46px;
+      line-height: 40px;
+      letter-spacing: -1px;
+    }
+  }
+}

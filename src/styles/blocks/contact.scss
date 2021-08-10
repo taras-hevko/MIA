@@ -1,0 +1,188 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $big-screen-x-padding $big-screen-y-padding $big-screen-x-padding;
+  &__title-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 68px;
+  }
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 48px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -1.5px;
+
+    color: $color-black;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 198px;
+
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 111px;
+  }
+  &__info-phone {
+    display: flex;
+    flex-direction: column;
+  }
+  &__info-address {
+    display: flex;
+    flex-direction: column;
+  }
+  &__subinfo {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 27px;
+    text-decoration: none;
+
+    color: $color-subtitle;
+    margin-bottom: 8px;
+    &:hover {
+      text-decoration: underline;
+      color: $color-text;
+    }
+  }
+  &__phone,
+  &__address {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 27px;
+    text-decoration: none;
+
+    color: $color-text;
+
+    margin-bottom: 24px;
+    &:hover {
+      color: $color-subtitle;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__input-message {
+    min-height: 144px;
+    margin-bottom: 32px;
+    resize: none;
+  }
+
+  &__input,
+  &__input-message {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+    width: 411px;
+    height: 48px;
+    padding: 14px 17px;
+
+    color: $color-black;
+    border: none;
+    background: #f7f8ff;
+    border-radius: 8px;
+    outline: none;
+
+    margin-bottom: 16px;
+    &:hover {
+      border: 2px solid #ccd0e0;
+    }
+    &:focus {
+      border: 2px solid $color-blue;
+    }
+    &::placeholder {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+
+      color: #8f99a8;
+    }
+  }
+  &__button {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 14px;
+    text-align: center;
+    padding: 21px 0;
+
+    color: $color-white;
+
+    background: $color-blue;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    &:hover {
+      background: #005ecc;
+      box-shadow: 0.1px 13px 27px rgba(0, 83, 181, 0.46);
+    }
+  }
+}
+
+@media (min-width: 784px) and (max-width: 1282px) {
+  .contact {
+    padding: 0 $small-screen-x-padding $small-screen-y-padding;
+    &__wrap {
+      gap: 32px;
+    }
+  }
+}
+
+@media (min-width: 501px) and (max-width: 783px) {
+  .contact {
+    padding: 0 $small-screen-x-padding $small-screen-y-padding;
+    &__title-wrap {
+      margin-bottom: 29px;
+    }
+    &__wrap {
+      flex-direction: column;
+      gap: 32px;
+    }
+    &__info {
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .contact {
+    padding: 0 $small-screen-x-padding $small-screen-y-padding;
+    &__title-wrap {
+      margin-bottom: 29px;
+    }
+    &__wrap {
+      flex-direction: column;
+      gap: 32px;
+    }
+    &__info {
+      flex-direction: column;
+      gap: 24px;
+    }
+    &__input,
+    &__input-message {
+      max-width: 280px;
+    }
+  }
+}
